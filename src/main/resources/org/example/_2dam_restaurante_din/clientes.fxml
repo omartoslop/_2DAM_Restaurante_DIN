@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._2dam_restaurante_din.ClienteController">
+
+    <children>
+        <!-- Tabla de Clientes -->
+        <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="20.0" prefHeight="300.0" prefWidth="500.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+                <TableColumn fx:id="colTelefono" prefWidth="150.0" text="Teléfono" />
+                <TableColumn fx:id="colDireccion" prefWidth="150.0" text="Dirección" />
+            </columns>
+        </TableView>
+
+        <!-- Formulario de Cliente -->
+        <VBox layoutX="20.0" layoutY="330.0" prefHeight="130.0" prefWidth="500.0" spacing="10">
+            <TextField fx:id="txtNombre" promptText="Nombre" />
+            <TextField fx:id="txtTelefono" promptText="Teléfono" />
+            <TextField fx:id="txtDireccion" promptText="Dirección" />
+
+            <!-- Botones para CRUD -->
+            <HBox spacing="10">
+                <Button fx:id="btnAgregar" onAction="#agregarCliente" text="Agregar" />
+                <Button fx:id="btnEditar" onAction="#editarCliente" text="Editar" />
+                <Button fx:id="btnEliminar" onAction="#eliminarCliente" text="Eliminar" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
