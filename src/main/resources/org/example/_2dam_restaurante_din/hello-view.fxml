@@ -4,16 +4,15 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="243.0" style="-fx-background-image: https://i.pinimg.com/736x/6d/93/9d/6d939defe5411e39643418fb57dfccba.jpg;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="243.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._2dam_restaurante_din.HelloController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="47.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="https://e7.pngegg.com/pngimages/716/758/png-clipart-graphics-restaurant-logo-restaurant-thumbnail.png" />
          </image>
       </ImageView>
-      <Button layoutX="23.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="198.0" text="Button" />
-      <Button layoutX="23.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="198.0" text="Button" />
-      <Button layoutX="23.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="198.0" text="Button" />
+      <Button fx:id="clientesButton" layoutX="23.0" layoutY="193.0" mnemonicParsing="false" onAction="#clientesButtonOnAction" prefHeight="25.0" prefWidth="198.0" text="Clientes" />
+      <Button fx:id="buttonProductos" layoutX="23.0" layoutY="226.0" mnemonicParsing="false" onAction="#buttonProductosOnAction" prefHeight="25.0" prefWidth="198.0" text="Productos" />
+      <Button fx:id="pedidosButton" layoutX="23.0" layoutY="260.0" mnemonicParsing="false" onAction="#buttonPedidosOnAction" prefHeight="25.0" prefWidth="198.0" text="Pedidos" />
    </children>
 </Pane>
