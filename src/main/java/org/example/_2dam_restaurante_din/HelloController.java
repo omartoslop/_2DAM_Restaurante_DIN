@@ -20,8 +20,7 @@ public class HelloController {
     Button pedidosButton;
     @FXML
     public void clientesButtonOnAction(ActionEvent actionEvent) {
-
-
+        navigateTo("clientes-view.fxml" , actionEvent);
     }
     @FXML
     public void buttonProductosOnAction(ActionEvent actionEvent) {
@@ -33,7 +32,7 @@ public class HelloController {
     @FXML
     private void navigateTo(String fxmlFile, ActionEvent event) {
         try {
-            Parent root = (Parent) FXMLLoader.load(this.getClass().getResource(fxmlFile));
+            Parent root = FXMLLoader.load(this.getClass().getResource(fxmlFile));
             Stage stage = (Stage)this.pedidosButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
