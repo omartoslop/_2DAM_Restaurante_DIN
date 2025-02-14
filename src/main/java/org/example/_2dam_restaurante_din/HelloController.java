@@ -24,6 +24,7 @@ public class HelloController {
     }
     @FXML
     public void buttonProductosOnAction(ActionEvent actionEvent) {
+        navigateTo("productos-view.fxml" , actionEvent);
     }
     @FXML
     public void buttonPedidosOnAction(ActionEvent actionEvent) {
