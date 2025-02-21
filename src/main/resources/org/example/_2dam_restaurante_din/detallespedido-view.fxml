@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="531.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._2dam_restaurante_din.PedidoController">
+<AnchorPane prefHeight="531.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._2dam_restaurante_din.DetallesPedidoController">
     <children>
         <TableView fx:id="tableViewProductos" layoutX="51.0" layoutY="43.0" prefHeight="200.0" prefWidth="499.0">
             <columns>

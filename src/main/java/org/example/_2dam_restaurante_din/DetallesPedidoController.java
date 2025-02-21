@@ -2,7 +2,7 @@ package org.example._2dam_restaurante_din;
 
 import javafx.event.ActionEvent;
 
-public class PedidoController {
+public class DetallesPedidoController {
     public void guardarPedido(ActionEvent actionEvent) {
     }
 
