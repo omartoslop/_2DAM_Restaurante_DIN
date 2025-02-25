@@ -35,7 +35,11 @@ public class EditarPedidoController {
         pedido.setHoraPedido(txtHoraPedido.getText());
         pedido.setTotal(Double.parseDouble(txtTotal.getText()));
         pedido.setEstado(txtEstado.getText());
+
         // Actualizar la base de datos con los cambios
+        PedidoDAO pedidoDAO = new PedidoDAO();
+        pedidoDAO.actualizarPedido(pedido);
+
         Stage stage = (Stage) txtCliente.getScene().getWindow();
         stage.close();
     }

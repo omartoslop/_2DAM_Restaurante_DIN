@@ -14,7 +14,11 @@
         <TextField fx:id="txtTotal" layoutX="150.0" layoutY="200.0" />
         <Label layoutX="50.0" layoutY="250.0" text="Estado:" />
         <TextField fx:id="txtEstado" layoutX="150.0" layoutY="250.0" />
-        <Button layoutX="150.0" layoutY="300.0" mnemonicParsing="false" onAction="#guardarCambios" text="Guardar" />
-        <Button layoutX="250.0" layoutY="300.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+        <Button layoutX="150.0" layoutY="300.0" mnemonicParsing="false" text="Guardar" >
+            <onAction>#guardarCambios</onAction>
+        </Button>
+        <Button layoutX="250.0" layoutY="300.0" mnemonicParsing="false" text="Cancelar" >
+            <onAction>#cancelar</onAction>
+        </Button>
     </children>
 </AnchorPane>
