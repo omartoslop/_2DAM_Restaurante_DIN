@@ -3,25 +3,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="531.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._2dam_restaurante_din.PedidoController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._2dam_restaurante_din.PedidoController">
     <children>
-        <TableView fx:id="tableViewProductos" layoutX="51.0" layoutY="43.0" prefHeight="200.0" prefWidth="499.0">
+         <TableView prefHeight="261.0" prefWidth="800.0">
             <columns>
-                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
-                <TableColumn fx:id="colNombre" prefWidth="120.0" text="Nombre" />
-                <TableColumn fx:id="colCategoria" prefWidth="100.0" text="Categoría" />
-                <TableColumn fx:id="colPrecio" prefWidth="80.0" text="Precio" />
-                <TableColumn fx:id="colDisponibilidad" prefWidth="90.0" text="Disponible" />
+                <TableColumn fx:id="colIdPedido" prefWidth="100.0" text="ID Pedido" />
+                <TableColumn fx:id="colCliente" prefWidth="150.0" text="Cliente" />
+                <TableColumn fx:id="colFechaPedido" prefWidth="150.0" text="Fecha Pedido" />
+                <TableColumn fx:id="colHoraPedido" prefWidth="100.0" text="Hora Pedido" />
+                <TableColumn fx:id="colTotal" prefWidth="100.0" text="Total" />
+                <TableColumn fx:id="colEstado" prefWidth="100.0" text="Estado" />
             </columns>
         </TableView>
-        <TextField fx:id="txtNombre" layoutX="51.0" layoutY="255.0" promptText="Nombre del Producto"/>
-        <TextField fx:id="txtCategoria" layoutX="51.0" layoutY="290.0" promptText="Categoría"/>
-        <TextField fx:id="txtPrecio" layoutX="51.0" layoutY="325.0" promptText="Precio"/>
-        <CheckBox fx:id="chkDisponible" layoutX="51.0" layoutY="355.0" text="Disponible"/>
-        <TextField fx:id="txtBuscar" layoutX="51.0" layoutY="385.0" promptText="Buscar producto"/>
-        <Button layoutX="51.0" layoutY="420.0" mnemonicParsing="false" onAction="#guardarPedido" text="Guardar" />
-        <Button layoutX="111.0" layoutY="420.0" mnemonicParsing="false" onAction="#eliminarPedido" text="Eliminar" />
-        <Button layoutX="174.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarPedido" text="Editar" />
-        <Button layoutX="236.0" layoutY="420.0" mnemonicParsing="false" onAction="#buscarPedido" text="Buscar" />
+        <TextField fx:id="txtCliente" layoutX="50.0" layoutY="270.0" promptText="Cliente" />
+        <TextField fx:id="txtFechaPedido" layoutX="50.0" layoutY="310.0" promptText="Fecha Pedido" />
+        <TextField fx:id="txtHoraPedido" layoutX="50.0" layoutY="350.0" promptText="Hora Pedido" />
+        <TextField fx:id="txtTotal" layoutX="50.0" layoutY="390.0" promptText="Total" />
+        <TextField fx:id="txtEstado" layoutX="50.0" layoutY="430.0" promptText="Estado" />
+        <Button layoutX="50.0" layoutY="470.0" mnemonicParsing="false" onAction="#crearPedido" text="Crear" />
+        <Button layoutX="120.0" layoutY="470.0" mnemonicParsing="false" onAction="#modificarPedido" text="Modificar" />
+        <Button layoutX="200.0" layoutY="470.0" mnemonicParsing="false" onAction="#eliminarPedido" text="Eliminar" />
+        <Button layoutX="280.0" layoutY="470.0" mnemonicParsing="false" onAction="#buscarPedido" text="Buscar" />
+        <Button layoutX="360.0" layoutY="470.0" mnemonicParsing="false" onAction="#verDetallePedido" text="Ver Detalle" />
+        <Button layoutX="440.0" layoutY="470.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
     </children>
 </AnchorPane>

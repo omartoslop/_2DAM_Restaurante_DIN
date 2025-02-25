@@ -1,17 +1,28 @@
 package org.example._2dam_restaurante_din;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 import javafx.event.ActionEvent;
 
 public class DetallesPedidoController {
-    public void guardarPedido(ActionEvent actionEvent) {
-    }
+    @FXML
+    private TableView<DetallePedido> tableViewDetallePedidos;
+    @FXML
+    private TableColumn<DetallePedido, Integer> colIdDetallePedido;
+    @FXML
+    private TableColumn<DetallePedido, Integer> colIdPedido;
+    @FXML
+    private TableColumn<DetallePedido, Integer> colIdProducto;
+    @FXML
+    private TableColumn<DetallePedido, Integer> colCantidad;
+    @FXML
+    private TableColumn<DetallePedido, Double> colPrecio;
+    @FXML
+    private TableColumn<DetallePedido, Double> colSubtotal;
 
-    public void eliminarPedido(ActionEvent actionEvent) {
-    }
-
-    public void editarPedido(ActionEvent actionEvent) {
-    }
-
-    public void buscarPedido(ActionEvent actionEvent) {
+    @FXML
+    private void volver(ActionEvent event) {
+        // Implementación para volver a la ventana de pedidos
     }
 }
