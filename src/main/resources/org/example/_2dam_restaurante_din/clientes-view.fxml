@@ -13,13 +13,14 @@
             <TableColumn fx:id="colDireccion" prefWidth="260.0" text="Direccion" />
         </columns>
       </TableView>
-      <TextField fx:id="txtNombre" layoutX="51.0" layoutY="255.0" />
-      <TextField fx:id="txtTelefono" layoutX="51.0" layoutY="290.0" />
-      <TextField fx:id="txtDireccion" layoutX="51.0" layoutY="325.0" />
-      <TextField fx:id="txtBuscar" layoutX="51.0" layoutY="361.0" />
+      <TextField fx:id="txtNombre" layoutX="51.0" layoutY="255.0" promptText="nombre" />
+      <TextField fx:id="txtTelefono" layoutX="51.0" layoutY="290.0" promptText="telefono" />
+      <TextField fx:id="txtDireccion" layoutX="51.0" layoutY="325.0" promptText="direccion" />
+      <TextField fx:id="txtBuscar" layoutX="51.0" layoutY="361.0" promptText="buscar cliente" />
       <Button layoutX="51.0" layoutY="400.0" mnemonicParsing="false" onAction="#guardarCliente" text="Guardar" />
       <Button layoutX="111.0" layoutY="400.0" mnemonicParsing="false" onAction="#eliminarCliente" text="Eliminar" />
       <Button layoutX="174.0" layoutY="400.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar" />
       <Button layoutX="236.0" layoutY="400.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar" />
+      <Button fx:id="backButton" layoutX="300.0" layoutY="400.0" mnemonicParsing="false" onAction="#volver" text="volver" />
    </children>
 </AnchorPane>

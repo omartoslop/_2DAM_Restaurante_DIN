@@ -20,4 +20,8 @@ public class PedidoDAO {
             e.printStackTrace();
         }
     }
+
+    public void actualizarPedido(Pedido pedido) {
+
+    }
 }

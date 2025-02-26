@@ -25,6 +25,6 @@
         <Button layoutX="200.0" layoutY="470.0" mnemonicParsing="false" onAction="#eliminarPedido" text="Eliminar" />
         <Button layoutX="280.0" layoutY="470.0" mnemonicParsing="false" onAction="#buscarPedido" text="Buscar" />
         <Button layoutX="360.0" layoutY="470.0" mnemonicParsing="false" onAction="#verDetallePedido" text="Ver Detalle" />
-        <Button layoutX="440.0" layoutY="470.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+        <Button fx:id="backButton" layoutX="440.0" layoutY="470.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
     </children>
 </AnchorPane>

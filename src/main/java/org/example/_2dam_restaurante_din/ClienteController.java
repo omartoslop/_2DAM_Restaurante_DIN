@@ -2,10 +2,17 @@ package org.example._2dam_restaurante_din;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class ClienteController {
@@ -18,6 +25,7 @@ public class ClienteController {
     @FXML private TextField txtTelefono;
     @FXML private TextField txtDireccion;
     @FXML private TextField txtBuscar;
+    @FXML private Button backButton;
 
     private Connection connection;
 
@@ -192,5 +200,21 @@ public class ClienteController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+    @FXML
+    private void volver(ActionEvent actionEvent) {
+        navigateTo("hello-view.fxml", actionEvent);
+    }
+    @FXML
+    private void navigateTo(String fxmlFile, ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(this.getClass().getResource(fxmlFile));
+            Stage stage = (Stage)this.backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

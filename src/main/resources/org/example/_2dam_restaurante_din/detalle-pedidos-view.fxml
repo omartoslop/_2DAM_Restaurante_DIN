@@ -14,6 +14,6 @@
                 <TableColumn fx:id="colSubtotal" prefWidth="100.0" text="Subtotal" />
             </columns>
         </TableView>
-        <Button layoutX="50.0" layoutY="270.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+        <Button fx:id="backButton" layoutX="50.0" layoutY="270.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
     </children>
 </AnchorPane>

@@ -3,6 +3,7 @@ package org.example._2dam_restaurante_din;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
@@ -33,7 +34,7 @@ public class PedidoController {
     @FXML
     private TableColumn<Pedido, String> colEstado;
     @FXML
-    private TextField txtCliente;
+    private TextField txtClienteId; // ID del Cliente
     @FXML
     private TextField txtFechaPedido;
     @FXML
@@ -42,6 +43,8 @@ public class PedidoController {
     private TextField txtTotal;
     @FXML
     private TextField txtEstado;
+    @FXML
+    private Button backButton;
 
     private ObservableList<Pedido> pedidos;
 
@@ -55,16 +58,16 @@ public class PedidoController {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurante", "user", "password");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM pedidos");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM Pedidos");
 
             while (resultSet.next()) {
                 Pedido pedido = new Pedido(
-                    resultSet.getInt("idPedido"),
-                    resultSet.getString("cliente"),
-                    resultSet.getString("fechaPedido"),
-                    resultSet.getString("horaPedido"),
-                    resultSet.getDouble("total"),
-                    resultSet.getString("estado")
+                        resultSet.getInt("id_pedido"),
+                        resultSet.getInt("id_cliente"),
+                        resultSet.getString("fecha_pedido"),
+                        resultSet.getString("hora_pedido"),
+                        resultSet.getDouble("total"),
+                        resultSet.getString("estado")
                 );
                 pedidos.add(pedido);
             }
@@ -77,46 +80,34 @@ public class PedidoController {
 
     @FXML
     private void crearPedido(ActionEvent event) {
-        // Implementación para crear un pedido
-    }
+        int idCliente = Integer.parseInt(txtClienteId.getText()); // Cambiado para usar idCliente
+        String fechaPedido = txtFechaPedido.getText();
+        String horaPedido = txtHoraPedido.getText();
+        double total = Double.parseDouble(txtTotal.getText());
+        String estado = txtEstado.getText();
 
-    @FXML
-    private void modificarPedido(ActionEvent event) {
-        Pedido selectedPedido = tableViewPedidos.getSelectionModel().getSelectedItem();
-        if (selectedPedido != null) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/_2dam_restaurante_din/editar-pedido-view.fxml"));
-                Parent root = loader.load();
-                EditarPedidoController controller = loader.getController();
-                controller.setPedido(selectedPedido);
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.setTitle("Editar Pedido");
-                stage.showAndWait();
-                tableViewPedidos.refresh();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+        Pedido nuevoPedido = new Pedido(0, idCliente, fechaPedido, horaPedido, total, estado);
+        PedidoDAO pedidoDAO = new PedidoDAO();
+        pedidoDAO.agregarPedido(nuevoPedido);
 
-    @FXML
-    private void eliminarPedido(ActionEvent event) {
-        // Implementación para eliminar un pedido
-    }
-
-    @FXML
-    private void buscarPedido(ActionEvent event) {
-        // Implementación para buscar un pedido
-    }
-
-    @FXML
-    private void verDetallePedido(ActionEvent event) {
-        // Implementación para ver el detalle de un pedido
+        pedidos.add(nuevoPedido); // Agregar el nuevo pedido a la lista
+        tableViewPedidos.refresh(); // Refrescar la tabla
     }
 
     @FXML
     private void volver(ActionEvent event) {
-        // Implementación para volver a la ventana principal
+        navigateTo("hello-view.fxml", event);
+    }
+
+    @FXML
+    private void navigateTo(String fxmlFile, ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(this.getClass().getResource(fxmlFile));
+            Stage stage = (Stage) this.backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -28,6 +28,7 @@ public class HelloController {
     }
     @FXML
     public void buttonPedidosOnAction(ActionEvent actionEvent) {
+        navigateTo("pedidos-view.fxml" , actionEvent);
     }
 
     @FXML

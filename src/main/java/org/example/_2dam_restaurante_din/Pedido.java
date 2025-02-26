@@ -2,22 +2,22 @@ package org.example._2dam_restaurante_din;
 
 public class Pedido {
     private int idPedido;
-    private String cliente;
+    private int idCliente;  // ID del cliente asociado
     private String fechaPedido;
     private String horaPedido;
     private double total;
     private String estado;
 
-    public Pedido(int idPedido, String cliente, String fechaPedido, String horaPedido, double total, String estado) {
+    public Pedido(int idPedido, int idCliente, String fechaPedido, String horaPedido, double total, String estado) {
         this.idPedido = idPedido;
-        this.cliente = cliente;
+        this.idCliente = idCliente;
         this.fechaPedido = fechaPedido;
         this.horaPedido = horaPedido;
         this.total = total;
         this.estado = estado;
     }
 
-    // Getters y setters
+    // Getters y Setters
     public int getIdPedido() {
         return idPedido;
     }
@@ -26,12 +26,12 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public String getCliente() {
-        return cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public String getFechaPedido() {
