@@ -73,7 +73,6 @@ public class ClienteDAO {
         }
     }
 
-
     public void eliminarCliente(int idCliente) {
         String sql = "DELETE FROM Clientes WHERE id_cliente = ?";
         try (Connection conn = DatabaseConnection.conectar();
@@ -84,7 +83,6 @@ public class ClienteDAO {
             e.printStackTrace();
         }
     }
-
 
     public Cliente buscarClientePorId(int idCliente) {
         String sql = "SELECT * FROM Clientes WHERE id_cliente = ?";

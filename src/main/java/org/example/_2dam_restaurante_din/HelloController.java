@@ -28,7 +28,7 @@ public class HelloController {
     }
     @FXML
     public void buttonPedidosOnAction(ActionEvent actionEvent) {
-        navigateTo("pedidos-view.fxml" , actionEvent);
+        navigateTo("pedido-view.fxml" , actionEvent);
     }
 
     @FXML
@@ -41,6 +41,5 @@ public class HelloController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example._2dam_restaurante_din.PedidoController">
+    <children>
+        <!-- Tabla de Pedidos -->
+        <TableView fx:id="tableViewPedidos" layoutX="20" layoutY="20" prefHeight="250" prefWidth="760">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50" text="ID" />
+                <TableColumn fx:id="colCliente" prefWidth="150" text="Cliente" />
+                <TableColumn fx:id="colFecha" prefWidth="100" text="Fecha" />
+                <TableColumn fx:id="colHora" prefWidth="100" text="Hora" />
+                <TableColumn fx:id="colTotal" prefWidth="100" text="Total" />
+                <TableColumn fx:id="colEstado" prefWidth="100" text="Estado" />
+            </columns>
+        </TableView>
+
+        <!-- Formulario para crear/editar pedido -->
+        <Label layoutX="20" layoutY="290" text="Cliente:" />
+        <ComboBox fx:id="comboClientes" layoutX="90" layoutY="285" prefWidth="200" />
+
+        <Label layoutX="320" layoutY="290" text="Fecha:" />
+        <DatePicker fx:id="datePickerFecha" layoutX="370" layoutY="285" prefWidth="150" />
+
+        <Label layoutX="20" layoutY="330" text="Hora:" />
+        <TextField fx:id="txtHora" layoutX="90" layoutY="325" prefWidth="200" promptText="HH:mm:ss" />
+
+        <Label layoutX="320" layoutY="330" text="Total:" />
+        <TextField fx:id="txtTotal" layoutX="370" layoutY="325" prefWidth="150" />
+
+        <Label layoutX="20" layoutY="370" text="Estado:" />
+        <ComboBox fx:id="comboEstado" layoutX="90" layoutY="365" prefWidth="200" />
+
+        <!-- Botones de Acción -->
+        <Button layoutX="20" layoutY="420" onAction="#guardarPedido" prefWidth="100" text="Guardar" />
+        <Button layoutX="130" layoutY="420" onAction="#editarPedido" prefWidth="100" text="Editar" />
+        <Button layoutX="240" layoutY="420" onAction="#eliminarPedido" prefWidth="100" text="Eliminar" />
+        <Button layoutX="350" layoutY="420" onAction="#buscarPedido" prefWidth="100" text="Buscar" />
+        <Button layoutX="460" layoutY="420" onAction="#verDetalles" prefWidth="100" text="Ver Detalles" />
+        <Button fx:id="backButton" layoutX="570" layoutY="420" onAction="#volver" prefWidth="100" text="Volver" />
+
+        <!-- Campo de búsqueda adicional -->
+        <TextField fx:id="txtBuscar" layoutX="20" layoutY="470" prefWidth="300" promptText="Buscar por Cliente/Estado" />
+    </children>
+</AnchorPane>
